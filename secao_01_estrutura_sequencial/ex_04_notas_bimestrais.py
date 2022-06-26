@@ -28,29 +28,13 @@ def calcular_media():
 
 """
 (Solução 2)
-Exercício 03 da seção de estrutura sequencial da Python Brasil:
-https://wiki.python.org.br/EstruturaSequencial
+notas = []
+nota_a = notas.append(float(input('Digite a primeira nota: ')))
+nota_b = notas.append(float(input('Digite a segunda nota: ')))
+nota_c = notas.append(float(input('Digite a terceira nota: ')))
+nota_d = notas.append(float(input('Digite a quarta nota: ')))
 
-Faça um Programa que peça as 4 notas bimestrais e mostre a média.
+media_aluno_2 = sum(notas) / 4
 
-    >>> from secao_01_estrutura_sequencial import ex_04_notas_bimestrais
-    >>> numeros =['7', '8','9','10']
-    >>> ex_04_notas_bimestrais.input = lambda k: numeros.pop()
-    >>> ex_04_notas_bimestrais.calcular_media_2()
-    A média anual é 8.5
-
+print(f'A média anual é {media_aluno_2}')
 """
-
-
-def calcular_media_2():
-    """Escreva aqui em baixo a sua solução"""
-
-    notas = []
-    nota_a = notas.append(float(input('Digite a primeira nota: ')))
-    nota_b = notas.append(float(input('Digite a segunda nota: ')))
-    nota_c = notas.append(float(input('Digite a terceira nota: ')))
-    nota_d = notas.append(float(input('Digite a quarta nota: ')))
-
-    media_aluno_2 = sum(notas) / 4
-
-    print(f'A média anual é {media_aluno_2}')
