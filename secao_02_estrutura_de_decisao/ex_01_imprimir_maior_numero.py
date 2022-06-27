@@ -22,18 +22,3 @@ def maior_de_dois_numeros(x, y):
         print(x)
     elif x < y:
         print(y)
-
-
-"""
-(solução 2)
-n1 = int(input('Digite um número: '))
-n2 = int(input('Digite outro número: '))
-
-if n1 > n2:
-    print(f'O numero maior é: {n1}')
-elif n1 < n2:
-    print(f'O numero maior é: {n2}')
-else:
-    print("os números são iguais")
-"""
-

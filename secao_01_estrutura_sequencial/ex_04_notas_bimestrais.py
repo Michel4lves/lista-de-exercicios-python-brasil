@@ -24,17 +24,3 @@ def calcular_media():
     media_aluno = (nota_1 + nota_2 + nota_3 + nota_4) / 4
 
     print(f'A média anual é {media_aluno}')
-
-
-"""
-(Solução 2)
-notas = []
-nota_a = notas.append(float(input('Digite a primeira nota: ')))
-nota_b = notas.append(float(input('Digite a segunda nota: ')))
-nota_c = notas.append(float(input('Digite a terceira nota: ')))
-nota_d = notas.append(float(input('Digite a quarta nota: ')))
-
-media_aluno_2 = sum(notas) / 4
-
-print(f'A média anual é {media_aluno_2}')
-"""
