@@ -57,7 +57,8 @@ def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
     import math
 
     salario_bruto = valor_hora * horas_trabalhadas
-    print(f'+ Salário Bruto: R$ {salario_bruto}')
+    descricao = f'(R$ {valor_hora:.2f} * {horas_trabalhadas})'
+    print(f'Salário Bruto: {descricao:<17}   : R$ {salario_bruto:8.2f}')
 
     taxa_ir = 0
     if 900 < salario_bruto <= 1500:
@@ -68,22 +69,20 @@ def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
         taxa_ir = 0.2
 
     irrf = salario_bruto * taxa_ir
-    if taxa_ir != 0:
-        print(f'- IR ({math.ceil(taxa_ir * 100)}%): R$ {irrf}')
-    elif taxa_ir == 0:
-        print(f'- IR (isento): R$ {irrf}')
+    descricao_taxa = f'({math.ceil(taxa_ir * 100)}%)'
+    print(f'(-) IR {descricao_taxa:<25}   : R$ {irrf:8.2f}')
 
     inss = salario_bruto * 0.1
-    print(f'- INSS (10%): R$ {inss}')
+    print(f'(-) INSS (10%)                     : R$ {inss:8.2f}')
 
     sindi = salario_bruto * 0.03
-    print(f'- Sindicato (3%): R$ {sindi}')
+    print(f'(-) Sindicato (3%)                 : R$ {sindi:8.2f}')
 
     fgts = salario_bruto * 0.11
-    print(f'FGTS (11%): R$ {fgts}')
+    print(f'FGTS (11%)                         : R$ {fgts:8.2f}')
 
     descontos_total = irrf + inss + sindi
-    print(f'Total de descontos: R$ {descontos_total}')
+    print(f'Total de descontos                 : R$ {descontos_total:8.2f}')
 
     sliquido = salario_bruto - (descontos_total)
-    print(f'= Salário Líquido: R$ {sliquido}')
+    print(f'Salário Liquido                    : R$ {sliquido:8.2f}')
