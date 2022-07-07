@@ -35,3 +35,34 @@ Mostre o restultado com duas casas decimais
 
 def calcular_abastecimento(litros_de_combustivel: float, tipo_de_combustivel: str) -> str:
     """Escreva aqui em baixo a sua solução"""
+
+    valor_gasolina = 2.5  # gasolina a R$ 2.50? HAHAHAHA
+    valor_alcool = 1.9
+    desconto = 0
+    indice_desconto = 0
+    valor_tota_gasolina = litros_de_combustivel * valor_gasolina
+    valor_total_alcool = litros_de_combustivel * valor_alcool
+
+    if tipo_de_combustivel == 'G':
+        if litros_de_combustivel <= 20:
+            desconto = valor_tota_gasolina * 0.04
+            indice_desconto = 4
+            valorapagarg = valor_tota_gasolina - desconto
+            print(f"'{litros_de_combustivel} litro(s) de gasolina custa(m): R$ {valor_tota_gasolina:.2f}. Com {indice_desconto}% de desconto, fica R$ {valorapagarg:.2f}'")
+        elif litros_de_combustivel > 20:
+            desconto = valor_tota_gasolina * 0.06
+            indice_desconto = 6
+            valorapagarg = valor_tota_gasolina - desconto
+            print(f"'{litros_de_combustivel} litro(s) de gasolina custa(m): R$ {valor_tota_gasolina:.2f}. Com {indice_desconto}% de desconto, fica R$ {valorapagarg:.2f}'")
+
+    if tipo_de_combustivel == 'A':
+        if litros_de_combustivel <= 20:
+            desconto = valor_total_alcool * 0.03
+            indice_desconto = 3
+            valorapagara = valor_total_alcool - desconto
+            print(f"'{litros_de_combustivel} litro(s) de álcool custa(m): R$ {valor_total_alcool:.2f}. Com {indice_desconto}% de desconto, fica R$ {valorapagara:.2f}'")
+        elif litros_de_combustivel > 20:
+            desconto = valor_total_alcool * 0.05
+            indice_desconto = 5
+            valorapagara = valor_total_alcool - desconto
+            print(f"'{litros_de_combustivel} litro(s) de álcool custa(m): R$ {valor_total_alcool:.2f}. Com {indice_desconto}% de desconto, fica R$ {valorapagara:.2f}'")

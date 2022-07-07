@@ -33,3 +33,25 @@ Caso contrário, ele será classificado como "Inocente".
 
 def investigar(telefonou: str, estava_no_local: str, mora_perto: str, devia: str, trabalhou: str, ):
     """Escreva aqui em baixo a sua solução"""
+
+    positivo = 0
+
+    if telefonou == "Sim":
+        positivo += 1
+    if estava_no_local == "Sim":
+        positivo += 1
+    if mora_perto == "Sim":
+        positivo += 1
+    if devia == "Sim":
+        positivo += 1
+    if trabalhou == "Sim":
+        positivo += 1
+
+    if positivo == 2:
+        print("'Suspeito'")
+    elif 2 < positivo < 5:
+        print("'Cúmplice'")
+    elif positivo == 5:
+        print("'Assassino'")
+    else:
+        print("'Inocente'")
