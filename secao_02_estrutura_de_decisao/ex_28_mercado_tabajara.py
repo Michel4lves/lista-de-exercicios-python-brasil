@@ -47,3 +47,4 @@ Mostre o restultado com duas casas decimais
 
 def calcular_preco_da_carne(tipo_de_carne: str, kilos_de_carne: int, forma_de_pagamento: str) -> str:
     """Escreva aqui em baixo a sua solução"""
+
