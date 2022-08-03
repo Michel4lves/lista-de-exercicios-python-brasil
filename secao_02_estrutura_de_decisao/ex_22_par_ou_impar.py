@@ -28,8 +28,8 @@ def decidir_se_eh_par_ou_impar(valor: int) -> str:
     elif valor == 1:
         print("'Impar'")
     elif valor >= 2:
-        par, valor = divmod(valor, 2)
-        if valor != 0:
-            print("'Impar'")
-        else:
+        v = valor % 2
+        if v == 0:
             print("'Par'")
+        else:
+            print("'Impar'")
