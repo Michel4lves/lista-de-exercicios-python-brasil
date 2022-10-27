@@ -25,3 +25,13 @@ n−ésimo termo.
 
 def calcular_serie_de_fibonacci(n: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+    lista_fibo = [1, ]
+    if n > 1:
+        lista_fibo = [1, 1]
+        for i in range(1, n-1):
+            fibo = (lista_fibo[-1] + lista_fibo[-2])
+            lista_fibo.append(fibo)
+        return ', '.join(map(str, lista_fibo))
+
+    return f'{n}'
+
