@@ -50,16 +50,13 @@ divisível.
 
 def eh_primo(n: int) -> bool:
     """Escreva aqui em baixo a sua solução"""
-    resultado = True
+    primo = True
     if n < 2:
         return False
-    if (n % 2 == 0) or (n % 3 == 0) or (n % 5 == 0) or (n % 7 == 0) or (n % 11 == 0):
-        metade = (n // 2) + 1
-        for i in range(2, metade):
-            if n % i == 0:
-                print(f'É divisível por {i}')
-                resultado = False
-        else:
-           return resultado
+    for i in range(2, n):
+        if n % i == 0:
+            primo = False
+            print(f'É divisível por {i}')
     else:
-        return resultado
+        return primo
+    return primo

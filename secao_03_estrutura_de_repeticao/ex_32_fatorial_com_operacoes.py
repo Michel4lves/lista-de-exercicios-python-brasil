@@ -22,7 +22,18 @@ Ex.: 5!=5.4.3.2.1=120
     5! = 5 . 4 . 3 . 2 . 1 = 120
 
 """
-
-
-def calcular_fatorial(n: int):
+def calcular_fatorial(n: int) -> int:
     """Escreva aqui em baixo a sua solução"""
+    def resultado_do_fatorial(n):
+        fatorial = 1
+        for n in range(n, 0, -1):
+            fatorial *= n
+            print(f"{n}{' .' if n > 1 else ''} ", end="")
+        return fatorial
+
+    print(f"Fatorial de {n}:")
+    print(f"{n}! = ", end ="")
+    # print(f"{n}{' .' if n > 1 else ''} ", end="")
+    fatorial = resultado_do_fatorial(n)
+    print(f"= {fatorial}")
+
