@@ -37,3 +37,13 @@ Mostre na tela:
 
 def lancar_dados(*valor_lancamentos):
     """Escreva aqui em baixo a sua solução"""
+    lacamentos = len(valor_lancamentos)
+    print(f'O dado foi lançado {lacamentos} vezes')
+    maior_incidencia = 0
+    numero_do_dado = 0
+    for i in range(1,7):
+        print(f'O número {i} caiu {valor_lancamentos.count(i)} vezes')
+        if valor_lancamentos.count(i) > maior_incidencia:
+            numero_do_dado, maior_incidencia = i, valor_lancamentos.count(i)
+
+    print(f"O lado com o número {numero_do_dado} caiu mais vezes ({maior_incidencia} vezes)")
