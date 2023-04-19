@@ -109,3 +109,48 @@ comprados.
 
 def fechar_conta(*itens):
     """Escreva aqui em baixo a sua solução"""
+    produtos = {'100': 0, '101': 0, '102': 0, '103': 0, '104': 0, '105': 0}
+    total_de_itens = 0
+
+    for chave, quantidade in itens:
+        produtos[chave] += quantidade
+        total_de_itens += quantidade
+
+    qtd_cachorro_quente, qtd_bauru_simples, qtd_bauru_com_ovo, qtd_hamburger, qtd_cheeseburguer, qtd_refrigerante = produtos.values()
+
+    cachorro_quente = qtd_cachorro_quente * 1.20
+    bauru_simples = qtd_bauru_simples * 1.30
+    bauru_com_ovo = qtd_bauru_com_ovo * 1.50
+    hamburger = qtd_hamburger * 1.20
+    cheeseburguer = qtd_cheeseburguer * 1.30
+    refrigerante = qtd_refrigerante * 1.00
+    total = cachorro_quente + bauru_simples + bauru_com_ovo + hamburger + cheeseburguer + refrigerante
+    nota_fiscal(qtd_cachorro_quente, cachorro_quente, qtd_bauru_simples, bauru_simples, bauru_com_ovo, qtd_bauru_com_ovo, hamburger, qtd_hamburger,
+                cheeseburguer, qtd_cheeseburguer, total, total_de_itens, refrigerante, qtd_refrigerante)
+
+def nota_fiscal(qtd_cachorro_quente, cachorro_quente, qtd_bauru_simples, bauru_simples, bauru_com_ovo, qtd_bauru_com_ovo, hamburger, qtd_hamburger,
+                cheeseburguer, qtd_cheeseburguer, total, total_de_itens, refrigerante, qtd_refrigerante):
+    print('_____________________________________________________________________________')
+    print('|                              RESUMO DA CONTA                              |')
+    print('|---------------------------------------------------------------------------|')
+    print('| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
+    if cachorro_quente > 0:
+        print(f'| Cachorro Quente  | 100    | 1.20                |          {qtd_cachorro_quente} |       {cachorro_quente:.2f} |')
+    if bauru_simples > 0:
+        print(
+            f'| Bauru Simples    | 101    | 1.30                |          {qtd_bauru_simples} |       {bauru_simples:.2f} |')
+    if bauru_com_ovo > 0:
+        print(
+            f'| Bauru com Ovo    | 102    | 1.50                |          {qtd_bauru_com_ovo} |       {bauru_com_ovo:.2f} |')
+    if hamburger > 0:
+        print(
+            f'| Hamburger        | 103    | 1.20                |          {qtd_hamburger} |       {hamburger:.2f} |')
+    if cheeseburguer > 0:
+        print(
+            f'| Cheeseburger     | 104    | 1.30                |          {qtd_cheeseburguer} |       {cheeseburguer:.2f} |')
+    if refrigerante > 0:
+        print(
+            f'| Refrigerante     | 105    | 1.00                |          {qtd_refrigerante} |       {refrigerante:.2f} |')
+    print('|---------------------------------------------------------------------------|')
+    print(f'| Total Geral:                                    | {total_de_itens:10d} | {total:10.2f} |')
+    print('-----------------------------------------------------------------------------')
