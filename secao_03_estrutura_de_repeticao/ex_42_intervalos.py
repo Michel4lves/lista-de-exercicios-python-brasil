@@ -37,6 +37,34 @@ A entrada de dados deverá terminar quando for lido um número negativo.
 
 """
 
-
 def listar_numeros_para_avaliacao():
     """Escreva aqui em baixo a sua solução"""
+    def impressao_de_valores(intervalo_um, intervalo_dois, intervalo_tres, intervalo_quatro):
+        if len(intervalo_um) > 0:
+            print(f"{len(intervalo_um)} número(s) entre o intervalo de zero a 25")
+        if len(intervalo_dois) > 0:
+            print(f"{len(intervalo_dois)} número(s) entre o intervalo de 26 a 50")
+        if len(intervalo_tres) > 0:
+            print(f"{len(intervalo_tres)} número(s) entre o intervalo de 51 a 75")
+        if len(intervalo_quatro) > 0:
+            print(f"{len(intervalo_quatro)} número(s) entre o intervalo de 76 a 100")
+
+    intervalo_um = []
+    intervalo_dois = []
+    intervalo_tres = []
+    intervalo_quatro =[]
+    while True:
+        valor = int(input(""))
+        if valor < 0:
+            impressao_de_valores(intervalo_um,intervalo_dois,intervalo_tres,intervalo_quatro)
+            break
+        elif valor > 1 and valor <= 25:
+            intervalo_um.append(valor)
+        elif valor > 25 and valor <= 50:
+            intervalo_dois.append(valor)
+        elif valor > 50 and valor <= 75:
+            intervalo_tres.append(valor)
+        elif valor > 75 and valor <= 100:
+            intervalo_quatro.append(valor)
+        else:
+            pass
