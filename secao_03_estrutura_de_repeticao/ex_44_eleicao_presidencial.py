@@ -85,8 +85,22 @@ A percentagem de votos em branco sobre o total de votos. Para finalizar o conjun
 
 
 """
-from collections import Counter
-
 
 def apurar_votos(*votos):
     """Escreva aqui em baixo a sua solução"""
+    Bostonaro = votos.count('1')
+    Luladrao = votos.count('2')
+    Dilmanta = votos.count('3')
+    FHC_Isentao = votos.count('4')
+    votos_brancos = votos.count('6')
+    votos_nulos = votos.count('5')
+    total_de_votos = Bostonaro + Luladrao + Dilmanta + FHC_Isentao + votos_brancos + votos_nulos
+
+    print('Código do Candidato Nome do Candidato Votos Porcentagem sobre total')
+    print(f'1                   Bostonaro         {Bostonaro:<5d}{(Bostonaro/total_de_votos)*100:6.1f}%')
+    print(f'2                   Luladrão          {Luladrao:<5d}{(Luladrao/total_de_votos)*100:6.1f}%')
+    print(f'3                   Dilmanta          {Dilmanta:<5d}{(Dilmanta/total_de_votos)*100:6.1f}%')
+    print(f'4                   FHC Isentão       {FHC_Isentao:<5d}{(FHC_Isentao/total_de_votos)*100:6.1f}%')
+    print('-------------------------------------------------------------------')
+    print(f'5                   Votos Nulos       {votos_nulos:<5d}{(votos_nulos/total_de_votos)*100:6.1f}%')
+    print(f'6                   Votos Brancos     {votos_brancos:<5d}{(votos_brancos/total_de_votos)*100:6.1f}%')

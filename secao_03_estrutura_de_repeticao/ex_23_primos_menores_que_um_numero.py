@@ -40,6 +40,24 @@ Serão avaliados o funcionamento, o estilo e o número de testes (divisões) exe
 """
 from typing import Tuple
 
+def eh_primo(n: int) -> Tuple[bool, int]:
+    if n < 2:
+        return False, 0
+    elif n == 2:
+        return True, 0
+    for d in range(2, (n // 2) + 1):
+        if n % d == 0:
+            return False, d
+    return True, 0
+
 
 def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
     """Escreva aqui em baixo a sua solução"""
+    resultado = []
+    divisoes = 0
+    for i in range(n+1):
+        primo, divisores = eh_primo(i)
+        if primo:
+            resultado.append(i)
+            divisoes += divisores
+    return (f"{', '.join(map(str, resultado))}", divisoes)

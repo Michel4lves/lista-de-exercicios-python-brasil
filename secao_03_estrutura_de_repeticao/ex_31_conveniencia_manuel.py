@@ -53,6 +53,33 @@ para registrar a próxima compra.
 
 """
 
+def gerar_nota_fiscal(valores_com_lista_de_produtos, total_da_compra, pgto_do_cliente):
+    print("Lojas Tabajara")
+    if len(valores_com_lista_de_produtos) != 0:
+        print(f"Total     : R${total_da_compra:7.2f}")
+        print(f"Dinheiro  : R${pgto_do_cliente:7.2f}")
+        print(f"Troco     : R${(pgto_do_cliente - total_da_compra):7.2f}")
+    print("-------------------")
 
 def rodar_programa_de_caixa():
     """Escreva aqui em baixo a sua solução"""
+    valores_com_lista_de_produtos = []
+    total_da_compra = 0
+    pgto_do_cliente = 0
+    while True:
+        valor_do_input = float(input(""))
+        if valor_do_input == -1:
+            try:
+                pgto_do_cliente = float(input("Pagamento do cliente"))
+                gerar_nota_fiscal(valores_com_lista_de_produtos, total_da_compra, pgto_do_cliente)
+            except:
+                gerar_nota_fiscal(valores_com_lista_de_produtos, total_da_compra, pgto_do_cliente)
+            break
+        if valor_do_input == 0:
+            pgto_do_cliente = float(input("Pagamento do cliente"))
+            gerar_nota_fiscal(valores_com_lista_de_produtos, total_da_compra, pgto_do_cliente)
+            valores_com_lista_de_produtos = []
+        else:
+            valores_com_lista_de_produtos.append(valor_do_input)
+            total_da_compra = sum(valores_com_lista_de_produtos)
+    print("Programa encerrado!")

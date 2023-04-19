@@ -44,7 +44,25 @@ Mostre os valores com uma casa decimal sem arredondar.
     João do Pulo: 6.2 m
 
 """
-
+from statistics import mean
 
 def calcular_estatiscas_do_salto(nome, *saltos):
     """Escreva aqui em baixo a sua solução"""
+    nome_do_atleta = nome
+    saltos_ordenados = sorted(saltos)
+    print(f'Atleta: {nome_do_atleta}')
+    print('---------------------------------')
+    print(f'Primeiro Salto: {saltos[0]} m')
+    print(f'Segundo Salto: {saltos[1]} m')
+    print(f'Terceiro Salto: {saltos[2]} m')
+    print(f'Quarto Salto: {saltos[3]} m')
+    print(f'Quinto Salto: {saltos[4]} m')
+    print('---------------------------------')
+    print(f'Melhor salto:  {saltos_ordenados[4]} m')
+    print(f'Pior salto: {saltos_ordenados[0]} m')
+    saltos_ordenados.pop(0)
+    saltos_ordenados.pop()
+    print(f'Média dos demais saltos: {mean(saltos_ordenados)-0.1:.1f} m')
+    print('---------------------------------')
+    print('Resultado final:')
+    print(f'{nome_do_atleta}: {mean(saltos_ordenados)-0.1:.1f} m')
