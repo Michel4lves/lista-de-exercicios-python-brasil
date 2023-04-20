@@ -21,3 +21,6 @@ letras maiúsculas ou minúsculas.
 
 def inversor(nome: str) -> str:
     """ Escreva seu código aqui embaixo """
+    valor = nome.upper()
+    valor_reverso_por_letras = ''.join(reversed(valor))
+    return valor_reverso_por_letras
