@@ -22,7 +22,7 @@ jobs:
       - name: Correção do Exercício 02 da seção de Listas
         if: always()
         run: |
-          python -m doctest -f secao_04_exercicios_lista/ex_01_vetor_10_numeros_inverso.py
+          python -m doctest -f secao_04_exercicios_lista/ex_02_vetor_10_numeros_inverso.py
       - name: Correção do Exercício 03 da seção de Listas
         if: always()
         run: |
